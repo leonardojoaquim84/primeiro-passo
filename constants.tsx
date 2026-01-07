@@ -12,7 +12,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: 's2',
-    name: 'Mechas Lumière Platinum',
+    name: 'Mechas Paulo Goes Platinum',
     description: 'Técnica exclusiva de clareamento preservando a saúde dos fios.',
     price: 450,
     duration: '240 min',

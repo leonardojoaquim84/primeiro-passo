@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { REWARDS } from '../constants.tsx';
 import { Award, Sparkles, ChevronRight, Gift, Zap, Crown } from 'lucide-react';
@@ -8,7 +7,7 @@ const Loyalty = () => {
   const [activeTier, setActiveTier] = useState('Bronze');
 
   useEffect(() => {
-    const stored = localStorage.getItem('lumiere_points');
+    const stored = localStorage.getItem('paulogoes_points');
     const p = stored ? parseInt(stored) : 0;
     setPoints(p);
 
@@ -22,7 +21,7 @@ const Loyalty = () => {
     if (points < cost) return;
     
     const newPoints = points - cost;
-    localStorage.setItem('lumiere_points', newPoints.toString());
+    localStorage.setItem('paulogoes_points', newPoints.toString());
     setPoints(newPoints);
     window.dispatchEvent(new Event('pointsUpdated'));
     alert('Recompensa resgatada com sucesso! O voucher foi enviado para seu e-mail.');
