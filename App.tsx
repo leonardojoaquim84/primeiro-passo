@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag, Calendar, Sparkles, Instagram, Facebook, MapPin, Phone } from 'lucide-react';
+import { Menu, X, Calendar, Instagram, Facebook, MapPin, Phone } from 'lucide-react';
 import Hero from './components/Hero';
 import ServicesList from './components/ServicesList';
 import Portfolio from './components/Portfolio';
@@ -14,7 +14,6 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Início', path: '/' },
     { name: 'Serviços', path: '/servicos' },
     { name: 'Portfólio', path: '/portfolio' },
     { name: 'Produtos', path: '/produtos' },
@@ -23,38 +22,59 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          <div className="flex-shrink-0 flex items-center">
-            <Link to="/" className="text-2xl font-serif font-bold text-slate-800 tracking-wider">
-              LUMIÈRE <span className="text-amber-600 font-light">STUDIO</span>
+        <div className="flex h-20 items-center">
+          
+          {/* Mobile Menu Button - Left-aligned on small screens */}
+          <div className="md:hidden flex flex-1">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 p-2">
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
+
+          {/* Mobile Logo - Centered on small screens */}
+          <div className="md:hidden flex-shrink-0">
+            <Link to="/" className="text-xl font-serif font-bold text-slate-800 tracking-wider">
+              PAULO GOES
             </Link>
           </div>
           
-          <div className="hidden md:flex space-x-8 items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-amber-600 ${
-                  location.pathname === link.path ? 'text-amber-600' : 'text-slate-600'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <Link 
-              to="/agendamento" 
-              className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all flex items-center gap-2"
-            >
-              <Calendar size={16} />
-              Agendar
-            </Link>
-          </div>
+          {/* Mobile placeholder for symmetry */}
+          <div className="md:hidden flex-1"></div>
 
-          <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+          {/* Desktop Navigation: Fully Centered Row Cluster */}
+          <div className="hidden md:flex items-center justify-center w-full gap-12">
+            {/* Logo and Nav Links Group */}
+            <div className="flex items-center gap-12">
+              <Link to="/" className="text-xl md:text-2xl font-serif font-bold text-slate-800 tracking-wider hover:text-amber-600 transition-colors whitespace-nowrap">
+                PAULO GOES <span className="text-amber-600 font-light">Concept Hair</span>
+              </Link>
+              
+              <div className="flex items-center gap-12">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`text-sm font-medium transition-colors hover:text-amber-600 whitespace-nowrap ${
+                      location.pathname === link.path ? 'text-amber-600' : 'text-slate-600'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Divider and Action Button */}
+            <div className="flex items-center gap-12">
+              <div className="h-6 w-px bg-slate-200"></div>
+              <Link 
+                to="/agendamento" 
+                className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all flex items-center gap-2 whitespace-nowrap"
+              >
+                <Calendar size={16} />
+                Agendar
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -62,7 +82,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -92,7 +112,7 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1 md:col-span-1">
-          <h3 className="text-2xl font-serif font-bold mb-6 tracking-wider">LUMIÈRE</h3>
+          <h3 className="text-2xl font-serif font-bold mb-6 tracking-wider">PAULO GOES</h3>
           <p className="text-slate-400 text-sm leading-relaxed mb-6">
             Especialistas em realçar sua beleza natural com técnicas avançadas e atendimento personalizado de alto padrão.
           </p>
@@ -130,7 +150,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="mt-16 pt-8 border-t border-slate-800 text-center text-slate-500 text-xs">
-        &copy; {new Date().getFullYear()} Lumière Beauty Studio. Todos os direitos reservados.
+        &copy; {new Date().getFullYear()} PAULO GOES Concept Hair. Todos os direitos reservados.
       </div>
     </div>
   </footer>

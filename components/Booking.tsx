@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
 import { SERVICES } from '../constants.tsx';
-// Added 'Phone' to the imports from lucide-react
 import { Calendar as CalendarIcon, Clock, CheckCircle, ChevronRight, User, Mail, Phone } from 'lucide-react';
 
 const Booking = () => {
@@ -21,17 +19,17 @@ const Booking = () => {
   const handleNext = () => setStep(prev => prev + 1);
   const handlePrev = () => setStep(prev => prev - 1);
 
+  const selectedService = SERVICES.find(s => s.id === formData.serviceId);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
+    
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
-    }, 2000);
+    }, 1500);
   };
-
-  const selectedService = SERVICES.find(s => s.id === formData.serviceId);
 
   if (isSuccess) {
     return (
@@ -42,8 +40,9 @@ const Booking = () => {
           </div>
           <h2 className="text-3xl font-serif font-bold text-slate-800 mb-4">Agendamento Realizado!</h2>
           <p className="text-slate-600 mb-8 leading-relaxed">
-            Olá {formData.name}, enviamos um e-mail de confirmação para {formData.email} com os detalhes do seu horário.
+            Olá {formData.name}, enviamos um e-mail de confirmação para {formData.email}.
           </p>
+          
           <div className="bg-slate-50 p-6 rounded-2xl text-left mb-10 border border-slate-100">
             <div className="flex justify-between text-sm mb-2">
               <span className="text-slate-500">Serviço:</span>
@@ -74,7 +73,7 @@ const Booking = () => {
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-800 mb-4">Agendamento Online</h2>
         <div className="w-20 h-1 bg-amber-600 mx-auto mb-8"></div>
-        <p className="text-slate-600">Reserve sua experiência Lumière em poucos cliques.</p>
+        <p className="text-slate-600">Reserve sua experiência PAULO GOES em poucos cliques.</p>
       </div>
 
       <div className="bg-white rounded-[2.5rem] shadow-xl border border-slate-50 overflow-hidden flex flex-col md:flex-row">
@@ -93,9 +92,6 @@ const Booking = () => {
               <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 ${step >= 3 ? 'bg-amber-600 border-amber-600' : 'border-white/30'}`}>3</div>
               <span className="font-semibold text-sm">Seus Dados</span>
             </div>
-          </div>
-          <div className="hidden md:block">
-            <p className="text-xs text-slate-400 italic">Precisando de ajuda? Chame nossa assistente virtual.</p>
           </div>
         </div>
 
@@ -121,7 +117,7 @@ const Booking = () => {
                         <p className="font-bold text-slate-800">{service.name}</p>
                         <p className="text-xs text-slate-500">{service.duration}</p>
                       </div>
-                      <span className="font-bold text-amber-600">R$ {service.price}</span>
+                      <span className="font-bold text-slate-800">R$ {service.price}</span>
                     </button>
                   ))}
                 </div>
@@ -195,7 +191,6 @@ const Booking = () => {
                     />
                   </div>
                   <div className="relative">
-                    {/* Fixed: Phone is now correctly imported and used */}
                     <Phone className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
                     <input 
                       type="tel" 
@@ -206,9 +201,9 @@ const Booking = () => {
                     />
                   </div>
                 </div>
-                <div className="p-6 bg-amber-50 rounded-2xl border border-amber-100 mt-6">
-                  <p className="text-xs text-amber-800 leading-relaxed">
-                    Ao confirmar, você concorda em receber lembretes do agendamento por e-mail e WhatsApp. Política de cancelamento: avisar com 24h de antecedência.
+                <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100 mt-6">
+                  <p className="text-xs text-slate-600 leading-relaxed italic">
+                    Política de cancelamento: por favor, nos avise com pelo menos 24h de antecedência caso não possa comparecer.
                   </p>
                 </div>
               </div>

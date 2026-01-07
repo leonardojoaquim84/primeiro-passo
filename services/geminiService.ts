@@ -1,7 +1,8 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 
+// Beauty consultation service powered by Google Gemini
 export const getBeautyConsultation = async (userInput: string) => {
+  // Always initialize with the latest API key from the environment
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
@@ -9,7 +10,7 @@ export const getBeautyConsultation = async (userInput: string) => {
       model: "gemini-3-flash-preview",
       contents: userInput,
       config: {
-        systemInstruction: `Você é o assistente virtual de luxo do Lumière Beauty Studio. 
+        systemInstruction: `Você é o assistente virtual de luxo do PAULO GOES Concept Hair. 
         Seu objetivo é sugerir serviços e produtos baseados nas necessidades do cliente. 
         Seja elegante, acolhedor e profissional. Use emojis discretos. 
         Responda sempre em Português do Brasil.
@@ -31,7 +32,12 @@ export const getBeautyConsultation = async (userInput: string) => {
       }
     });
 
-    return JSON.parse(response.text);
+    // Directly access the .text property as per the SDK guidelines
+    const text = response.text;
+    if (!text) throw new Error("No response text from AI");
+    
+    // Parse the JSON string from the response
+    return JSON.parse(text.trim());
   } catch (error) {
     console.error("Gemini API Error:", error);
     return {

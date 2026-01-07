@@ -1,4 +1,3 @@
-
 export interface Service {
   id: string;
   name: string;
@@ -25,10 +24,11 @@ export interface PortfolioItem {
   imageUrl: string;
 }
 
-export interface Appointment {
-  serviceId: string;
-  date: string;
-  time: string;
-  customerName: string;
-  customerEmail: string;
+// Reward interface for the loyalty program
+export interface Reward {
+  id: string;
+  title: string;
+  description: string;
+  pointsCost: number;
+  type: 'Desconto' | 'Produto' | 'Serviço';
 }

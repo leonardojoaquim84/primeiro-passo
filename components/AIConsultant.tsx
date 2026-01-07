@@ -7,7 +7,7 @@ const AIConsultant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{role: 'user' | 'bot', content: string, suggestions?: string[]}[]>([
-    { role: 'bot', content: 'Olá! Sou sua consultora de beleza Lumière. Como posso te ajudar hoje? Posso sugerir tratamentos para seu tipo de cabelo ou pele.' }
+    { role: 'bot', content: 'Olá! Sou sua consultora de beleza PAULO GOES. Como posso te ajudar hoje? Posso sugerir tratamentos para seu tipo de cabelo ou pele.' }
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -44,7 +44,7 @@ const AIConsultant = () => {
                 <Sparkles size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-sm leading-tight">Consultora Lumière</h4>
+                <h4 className="font-bold text-sm leading-tight">Consultora PAULO GOES</h4>
                 <p className="text-[10px] text-slate-400 uppercase tracking-widest">Atendimento IA Premium</p>
               </div>
             </div>
