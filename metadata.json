@@ -1,0 +1,7 @@
+{
+  "name": "Paulo Goes",
+  "description": "Um aplicativo premium para salão de beleza com portfólio interativo, catálogo de serviços, loja de produtos exclusivos e sistema de agendamento inteligente com assistente de IA.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

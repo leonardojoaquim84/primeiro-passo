@@ -1,0 +1,60 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Sparkles } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <section className="relative h-[85vh] flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://picsum.photos/seed/beauty-hero/1920/1080" 
+          alt="Beauty Studio" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+        <div className="max-w-2xl animate-in slide-in-from-left duration-1000">
+          <div className="flex items-center gap-2 mb-6 text-amber-400 font-semibold tracking-widest text-sm uppercase">
+            <Sparkles size={18} />
+            <span>Onde a beleza encontra a arte</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
+            Descubra sua <br />
+            <span className="text-amber-400">Melhor Versão</span>
+          </h1>
+          <p className="text-lg md:text-xl text-slate-200 mb-10 leading-relaxed font-light">
+            Experiência premium em beleza e bem-estar no coração da cidade. 
+            Ambiente exclusivo, técnicas internacionais e atendimento sob medida para você.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link 
+              to="/agendamento" 
+              className="bg-amber-600 hover:bg-amber-500 text-white px-10 py-4 rounded-full font-bold text-center transition-all transform hover:scale-105 flex items-center justify-center gap-2 group"
+            >
+              Agendar Experiência
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link 
+              to="/servicos" 
+              className="bg-white/10 backdrop-blur-sm border border-white/30 hover:bg-white/20 text-white px-10 py-4 rounded-full font-bold text-center transition-all"
+            >
+              Nossos Serviços
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute bottom-0 right-0 p-8 hidden lg:block animate-bounce duration-[3000ms]">
+        <div className="w-px h-24 bg-gradient-to-b from-transparent to-amber-400 mx-auto"></div>
+        <span className="text-xs uppercase tracking-[0.3em] text-amber-400 [writing-mode:vertical-lr] mt-4">Scroll Down</span>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
