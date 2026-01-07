@@ -9,18 +9,18 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/seed/beauty-hero/1920/1080" 
-          alt="Beauty Studio" 
+          src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1920" 
+          alt="Paulo Goes Concept Hair Studio" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
         <div className="max-w-2xl animate-in slide-in-from-left duration-1000">
           <div className="flex items-center gap-2 mb-6 text-amber-400 font-semibold tracking-widest text-sm uppercase">
             <Sparkles size={18} />
-            <span>Onde a beleza encontra a arte</span>
+            <span>Deixe seu brilho por onde passar</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-serif font-bold mb-8 leading-tight">
             Descubra sua <br />
@@ -51,7 +51,7 @@ const Hero = () => {
       {/* Decorative elements */}
       <div className="absolute bottom-0 right-0 p-8 hidden lg:block animate-bounce duration-[3000ms]">
         <div className="w-px h-24 bg-gradient-to-b from-transparent to-amber-400 mx-auto"></div>
-        <span className="text-xs uppercase tracking-[0.3em] text-amber-400 [writing-mode:vertical-lr] mt-4">Scroll Down</span>
+        <span className="text-xs uppercase tracking-[0.3em] text-amber-400 [writing-mode:vertical-lr] mt-4">Role para baixo</span>
       </div>
     </section>
   );

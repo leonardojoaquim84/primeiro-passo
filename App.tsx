@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Menu, X, Calendar, Instagram, Facebook, MapPin, Phone } from 'lucide-react';
+import { Menu, X, Calendar, Instagram, MapPin, Phone } from 'lucide-react';
 import Hero from './components/Hero';
 import ServicesList from './components/ServicesList';
 import Portfolio from './components/Portfolio';
@@ -117,8 +117,9 @@ const Footer = () => (
             Especialistas em realçar sua beleza natural com técnicas avançadas e atendimento personalizado de alto padrão.
           </p>
           <div className="flex gap-4">
-            <Instagram className="text-slate-400 hover:text-amber-400 cursor-pointer transition-colors" size={20} />
-            <Facebook className="text-slate-400 hover:text-amber-400 cursor-pointer transition-colors" size={20} />
+            <a href="https://www.instagram.com/paulogoes__/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-amber-400 transition-colors">
+              <Instagram size={20} />
+            </a>
           </div>
         </div>
         
@@ -132,11 +133,22 @@ const Footer = () => (
           </ul>
         </div>
 
-        <div>
+        <div className="col-span-1">
           <h4 className="font-bold text-lg mb-6">Contato</h4>
           <ul className="space-y-4 text-slate-400 text-sm">
-            <li className="flex items-center gap-2"><Phone size={16} /> (11) 99999-9999</li>
-            <li className="flex items-start gap-2"><MapPin size={16} className="mt-1 shrink-0" /> Av. Paulista, 1000 - São Paulo, SP</li>
+            <li className="flex items-center gap-2"><Phone size={16} /> (21) 99149-6983</li>
+            <li className="flex items-start gap-2">
+              <MapPin size={16} className="mt-1 shrink-0" />
+              <a 
+                href="https://maps.app.goo.gl/VoiKu7jN6S6CPdBfA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors"
+              >
+                Rua José Bonifácio 1050 bloco 2 sala 1218 - Todos os Santos - Rio de Janeiro.<br/>
+                DOM Office - Em frente ao Norte Shopping
+              </a>
+            </li>
           </ul>
         </div>
 

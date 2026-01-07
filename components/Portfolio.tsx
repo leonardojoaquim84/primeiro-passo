@@ -36,7 +36,7 @@ const Portfolio = () => {
 
         <div className="mt-16 text-center">
           <a 
-            href="https://instagram.com" 
+            href="https://www.instagram.com/paulogoes__/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-slate-900 font-bold border-b-2 border-amber-600 pb-1 hover:text-amber-600 transition-colors"
