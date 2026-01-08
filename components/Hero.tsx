@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative h-[85vh] flex items-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative h-screen flex items-center overflow-hidden">
+      {/* Background Image - Wallpaper Atualizado conforme solicitado */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/seed/beauty-hero/1920/1080" 
-          alt="Beauty Studio" 
-          className="w-full h-full object-cover"
+          src="https://i.postimg.cc/vH44k0v0/Whats_App_Image_2026_01_07_at_20_24_55.jpg" 
+          alt="Paulo Goes Concept Hair Wallpaper" 
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
       </div>
