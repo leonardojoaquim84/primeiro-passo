@@ -47,12 +47,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute bottom-0 right-0 p-8 hidden lg:block animate-bounce duration-[3000ms]">
-        <div className="w-px h-24 bg-gradient-to-b from-transparent to-amber-400 mx-auto"></div>
-        <span className="text-xs uppercase tracking-[0.3em] text-amber-400 [writing-mode:vertical-lr] mt-4">Scroll Down</span>
-      </div>
     </section>
   );
 };

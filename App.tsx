@@ -8,6 +8,7 @@ import Portfolio from './components/Portfolio';
 import Shop from './components/Shop';
 import Booking from './components/Booking';
 import AIConsultant from './components/AIConsultant';
+import AboutUs from './components/AboutUs';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ const Navbar = () => {
     { name: 'Serviços', path: '/servicos' },
     { name: 'Portfólio', path: '/portfolio' },
     { name: 'Produtos', path: '/produtos' },
+    { name: 'Quem Somos', path: '/quem-somos' },
   ];
 
   return (
@@ -129,6 +131,7 @@ const Footer = () => (
             <li><Link to="/servicos" className="hover:text-white transition-colors">Serviços</Link></li>
             <li><Link to="/portfolio" className="hover:text-white transition-colors">Portfólio</Link></li>
             <li><Link to="/produtos" className="hover:text-white transition-colors">Produtos</Link></li>
+            <li><Link to="/quem-somos" className="hover:text-white transition-colors">Quem Somos</Link></li>
             <li><Link to="/agendamento" className="hover:text-white transition-colors">Agendamento</Link></li>
           </ul>
         </div>
@@ -180,6 +183,7 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/produtos" element={<Shop />} />
             <Route path="/agendamento" element={<Booking />} />
+            <Route path="/quem-somos" element={<AboutUs />} />
           </Routes>
         </main>
         <Footer />
