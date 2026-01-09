@@ -5,28 +5,69 @@ import { Link } from 'react-router-dom';
 const AboutUs = () => {
   return (
     <div className="bg-[#fafafa] pb-20">
-      {/* Imagem de Topo - Exibição da Foto Inteira */}
-      <section className="w-full bg-slate-900 flex justify-center items-center overflow-hidden">
-        <img 
-          src="https://i.postimg.cc/bYCGm71Q/Whats_App_Image_2026_01_07_at_20_03_24_(1).jpg" 
-          alt="Ambiente Paulo Goes Concept Hair" 
-          className="w-full h-auto max-h-[90vh] object-contain"
-        />
-      </section>
+      {/* Hero Section - Foto Centralizada com Texto nas Laterais (Espaços Escuros) */}
+      <section className="relative w-full bg-slate-950 min-h-[70vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden py-12 lg:py-0">
+        
+        {/* Camada de Decoração de Fundo */}
+        <div className="absolute inset-0 pointer-events-none opacity-20">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,#1e293b_0%,#020617_100%)]"></div>
+        </div>
 
-      {/* Título e Introdução - Movidos para baixo da foto para não atrapalhar a visão */}
-      <section className="py-16 md:py-24 bg-white border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-1 bg-amber-600/10 text-amber-600 rounded-full text-xs font-bold uppercase tracking-[0.2em] mb-6 border border-amber-600/20">
-            Desde 2015
-          </span>
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 tracking-tight">Nossa Essência</h1>
-          <p className="text-slate-600 text-lg md:text-2xl font-light leading-relaxed">
-            Um refúgio de sofisticação onde cada detalhe é pensado para <span className="text-slate-900 font-medium italic underline decoration-amber-500 decoration-2">revelar sua identidade única.</span> 
-            Acreditamos que o ambiente é o primeiro passo para uma experiência de beleza inesquecível.
-          </p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative h-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            
+            {/* LADO ESQUERDO: Título Impactante (Nossa Essência) */}
+            <div className="w-full lg:w-1/4 text-center lg:text-right z-10 animate-in fade-in slide-in-from-left duration-1000">
+              <h1 className="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-4">
+                Nossa <br className="hidden lg:block" />
+                <span className="text-amber-500">Essência</span>
+              </h1>
+              <div className="hidden lg:block w-16 h-1 bg-amber-600 ml-auto mb-6"></div>
+            </div>
+
+            {/* CENTRO: Foto Inteira (Object Contain) */}
+            <div className="w-full lg:w-2/4 flex justify-center z-0">
+              <div className="relative group">
+                {/* Glow sutil atrás da imagem */}
+                <div className="absolute -inset-10 bg-amber-600/5 rounded-full blur-[100px] opacity-50"></div>
+                
+                <img 
+                  src="https://i.postimg.cc/bYCGm71Q/Whats_App_Image_2026_01_07_at_20_03_24_(1).jpg" 
+                  alt="Ambiente Paulo Goes Concept Hair" 
+                  className="relative z-10 w-full h-auto max-h-[80vh] object-contain rounded-2xl shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+                />
+              </div>
+            </div>
+
+            {/* LADO DIREITO: Frases de Descrição */}
+            <div className="w-full lg:w-1/4 text-center lg:text-left z-10 space-y-8 animate-in fade-in slide-in-from-right duration-1000">
+              <div className="space-y-6">
+                <p className="text-slate-200 text-lg md:text-xl font-light leading-relaxed border-l-0 lg:border-l-4 border-amber-500/50 lg:pl-6 italic">
+                  Um refúgio de sofisticação onde cada detalhe é pensado para <span className="text-white font-medium">revelar sua identidade única.</span>
+                </p>
+                
+                <p className="text-slate-400 text-base md:text-lg font-light leading-relaxed lg:pl-6">
+                  Acreditamos que o <span className="text-amber-500 font-semibold">ambiente</span> é o primeiro passo para uma experiência de beleza inesquecível.
+                </p>
+              </div>
+
+              <div className="lg:pl-6">
+                <Link 
+                  to="/agendamento" 
+                  className="inline-flex items-center gap-2 text-amber-500 font-bold text-xs uppercase tracking-[0.3em] hover:text-white transition-all group"
+                >
+                  Conhecer o Espaço
+                  <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
+
+      {/* Espaçador de Transição */}
+      <div className="h-16 bg-gradient-to-b from-slate-950 to-white"></div>
 
       {/* Main Specialist Profile */}
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

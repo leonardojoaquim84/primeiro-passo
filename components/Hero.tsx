@@ -5,10 +5,10 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
-      {/* Background Image - Wallpaper Atualizado conforme solicitado */}
+      {/* Background Image - Wallpaper Atualizado */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://i.postimg.cc/vH44k0v0/Whats_App_Image_2026_01_07_at_20_24_55.jpg" 
+          src="https://i.postimg.cc/90NkgNN5/IMG_1596.jpg" 
           alt="Paulo Goes Concept Hair Wallpaper" 
           className="w-full h-full object-cover object-center"
         />
