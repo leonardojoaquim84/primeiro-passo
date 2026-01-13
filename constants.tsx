@@ -12,11 +12,11 @@ export const SERVICES: Service[] = [
   },
   {
     id: 's2',
-    name: 'Mechas Paulo Goes Platinum',
+    name: 'Mechas Paulo Goes',
     description: 'Ilumine o visual com mechas que realçam sua beleza natural 💫\nTécnica profissional para criar contraste, profundidade e um efeito moderno, com resultado harmonioso e sofisticado.\n\n✔️ Mechas personalizadas\n✔️ Mais brilho e dimensão\n✔️ Visual renovado e elegante',
     duration: '240 min',
     category: 'Cabelo',
-    image: 'https://i.postimg.cc/LsNCrnPJ/cd118db4_feeb_44a7_ad42_4488bd7e2cb8.jpg',
+    image: 'https://i.postimg.cc/YSbnJhF0/27ec6d13_fb8b_481f_af4b_a96df2e88b10.jpg',
     price: 'A partir de R$ 620'
   },
   {
@@ -81,12 +81,11 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const PORTFOLIO: PortfolioItem[] = [
-  { id: '1', title: 'Blonde Balayage', category: 'Cabelo', imageUrl: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=600' },
-  { id: '2', title: 'Bridal Glow', category: 'Maquiagem', imageUrl: 'https://images.unsplash.com/photo-1512496011931-a2c78a06573b?auto=format&fit=crop&q=80&w=600' },
-  { id: '3', title: 'Modern Bob', category: 'Cabelo', imageUrl: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=600' },
-  { id: '4', title: 'Red Carpet Glam', category: 'Maquiagem', imageUrl: 'https://images.unsplash.com/photo-1457972851104-4fd469440bf9?auto=format&fit=crop&q=80&w=600' },
-  { id: '5', title: 'Nail Art Minimalista', category: 'Unhas', imageUrl: 'https://images.unsplash.com/photo-1604654894610-df490982570d?auto=format&fit=crop&q=80&w=600' },
-  { id: '6', title: 'Penteado de Luxo', category: 'Cabelo', imageUrl: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&q=80&w=600' },
+  { id: '1', title: 'Um lugar pensado para você', category: 'Cabelo', imageUrl: 'https://i.postimg.cc/pL1qxcNq/Whats_App_Image_2026_01_08_at_11_54_18.jpg' },
+  { id: '2', title: 'Concept Hair Experience', category: 'Cabelo', imageUrl: 'https://i.postimg.cc/8kKFZ2Ld/Whats_App_Image_2026_01_07_at_20_03_24.jpg' },
+  { id: '3', title: 'Elegância & Design', category: 'Cabelo', imageUrl: 'https://i.postimg.cc/HWZJ6qby/Whats_App_Image_2026_01_07_at_20_03_24_(2).jpg' },
+  { id: '4', title: 'Atendimento Personalizado', category: 'Cabelo', imageUrl: 'https://i.postimg.cc/1RCgvkD7/Whats_App_Image_2026_01_07_at_20_24_55_(2).jpg' },
+  { id: '5', title: 'Design de Corte', category: 'Cabelo', imageUrl: 'https://i.postimg.cc/wxftwCDk/Whats_App_Image_2026_01_07_at_20_11_59_(2).jpg' },
 ];
 
 export const REWARDS: Reward[] = [
