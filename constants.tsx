@@ -13,15 +13,16 @@ export const SERVICES: Service[] = [
   {
     id: 's2',
     name: 'Mechas Paulo Goes Platinum',
-    description: 'Técnica exclusiva de clareamento preservando a saúde dos fios.',
+    description: 'Ilumine o visual com mechas que realçam sua beleza natural 💫\nTécnica profissional para criar contraste, profundidade e um efeito moderno, com resultado harmonioso e sofisticado.\n\n✔️ Mechas personalizadas\n✔️ Mais brilho e dimensão\n✔️ Visual renovado e elegante',
     duration: '240 min',
     category: 'Cabelo',
-    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.postimg.cc/LsNCrnPJ/cd118db4_feeb_44a7_ad42_4488bd7e2cb8.jpg',
+    price: 'A partir de R$ 620'
   },
   {
     id: 's6',
     name: 'Luzes Personalizadas',
-    description: 'Técnica de iluminação estratégica para criar contraste, dimensão e brilho natural aos fios.',
+    description: 'Realce sua beleza com luzes feitas sob medida para você 💫\nTécnica profissional para iluminar os fios, dar mais movimento, profundidade e um visual moderno e natural.\n\n✔️ Resultado personalizado\n✔️ Mais brilho e leveza\n✔️ Cabelo renovado e sofisticado',
     duration: '180 min',
     category: 'Cabelo',
     image: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800'
