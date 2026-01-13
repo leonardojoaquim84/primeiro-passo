@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SERVICES } from '../constants.tsx';
 import { CheckCircle, User, Phone, Send, MessageCircle } from 'lucide-react';
@@ -20,7 +19,7 @@ const Booking = () => {
       return;
     }
 
-    const message = `Olá! Gostaria de agendar um serviço no Paulo Goes Concept Hair.%0A%0A*Nome:* ${formData.name}%0A*Telefone:* ${formData.phone}%0A*Serviço:* ${selectedService.name}`;
+    const message = `Olá! Gostaria de agendar um serviço no Paulo Goes Concept Hair.%0A%0A*Nome:* ${formData.name}%0A*Telefone:* ${formData.phone}%0A*Serviço:* ${selectedService.name}${selectedService.price ? `%0A*Valor:* ${selectedService.price}` : ''}`;
     const whatsappUrl = `https://wa.me/5521991496983?text=${message}`;
     
     window.open(whatsappUrl, '_blank');
@@ -59,10 +58,12 @@ const Booking = () => {
                     <p className={`font-bold transition-colors ${formData.serviceId === service.id ? 'text-amber-700' : 'text-slate-700'}`}>
                       {service.name}
                     </p>
-                    <p className="text-xs text-slate-500">{service.duration}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-xs text-slate-500">{service.duration}</p>
+                      {service.price && <span className="text-[10px] font-bold text-amber-600">| {service.price}</span>}
+                    </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="font-bold text-slate-800">R$ {service.price}</span>
                     <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                       formData.serviceId === service.id ? 'bg-amber-600 border-amber-600' : 'border-slate-300'
                     }`}>
@@ -133,7 +134,7 @@ const Booking = () => {
                 <p className="text-xs font-bold text-amber-700 uppercase tracking-widest mb-2">Resumo da Escolha</p>
                 <div className="flex justify-between items-center">
                   <span className="text-slate-700 font-medium">{selectedService.name}</span>
-                  <span className="font-bold text-amber-600">R$ {selectedService.price}</span>
+                  {selectedService.price && <span className="text-amber-600 font-bold text-sm">{selectedService.price}</span>}
                 </div>
               </div>
             )}

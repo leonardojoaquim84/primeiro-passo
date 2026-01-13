@@ -2,10 +2,10 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  price: number;
   duration: string;
   category: 'Cabelo' | 'Unhas' | 'Maquiagem' | 'Estética';
   image: string;
+  price?: string;
 }
 
 export interface Product {

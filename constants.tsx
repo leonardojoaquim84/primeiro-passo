@@ -4,26 +4,32 @@ export const SERVICES: Service[] = [
   {
     id: 's1',
     name: 'Corte Designer & Visagismo',
-    description: 'Transformação completa baseada no seu formato de rosto.',
-    price: 180,
+    description: 'Renove seu visual com um corte que combina com você ✨\nTécnica profissional para valorizar o formato do rosto, o estilo e a personalidade, garantindo praticidade, baixa manutenção e elegância no dia a dia.\n\n✔️ Corte personalizado\n✔️ Mais leveza e movimento\n✔️ Acabamento impecável',
     duration: '60 min',
     category: 'Cabelo',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800'
+    image: 'https://i.postimg.cc/PrCC9SMQ/Whats_App_Image_2026_01_07_at_20_11_59.jpg',
+    price: 'A partir de R$ 140'
   },
   {
     id: 's2',
     name: 'Mechas Paulo Goes Platinum',
     description: 'Técnica exclusiva de clareamento preservando a saúde dos fios.',
-    price: 450,
     duration: '240 min',
     category: 'Cabelo',
     image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800'
   },
   {
+    id: 's6',
+    name: 'Luzes Personalizadas',
+    description: 'Técnica de iluminação estratégica para criar contraste, dimensão e brilho natural aos fios.',
+    duration: '180 min',
+    category: 'Cabelo',
+    image: 'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800'
+  },
+  {
     id: 's3',
     name: 'Manicure & Pedicure Premium',
     description: 'Cutilagem russa e esmaltação em gel de longa duração.',
-    price: 120,
     duration: '90 min',
     category: 'Unhas',
     image: 'https://images.unsplash.com/photo-1604654894610-df490982570d?auto=format&fit=crop&q=80&w=800'
@@ -32,7 +38,6 @@ export const SERVICES: Service[] = [
     id: 's4',
     name: 'Maquiagem Social Deluxe',
     description: 'Para eventos especiais, com cílios inclusos e alta durabilidade.',
-    price: 250,
     duration: '75 min',
     category: 'Maquiagem',
     image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=800'
@@ -41,7 +46,6 @@ export const SERVICES: Service[] = [
     id: 's5',
     name: 'Limpeza de Pele Profunda',
     description: 'Remoção de impurezas com peeling de diamante.',
-    price: 200,
     duration: '90 min',
     category: 'Estética',
     image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=800'
@@ -84,7 +88,6 @@ export const PORTFOLIO: PortfolioItem[] = [
   { id: '6', title: 'Penteado de Luxo', category: 'Cabelo', imageUrl: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&q=80&w=600' },
 ];
 
-// List of available rewards for the loyalty program
 export const REWARDS: Reward[] = [
   {
     id: 'r1',

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { SERVICES } from '../constants.tsx';
 import { Clock, Tag } from 'lucide-react';
@@ -42,8 +41,8 @@ const ServicesList = () => {
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredServices.map(service => (
-          <div key={service.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100">
-            <div className="relative h-64 overflow-hidden">
+          <div key={service.id} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-slate-100 flex flex-col">
+            <div className="relative h-64 overflow-hidden shrink-0">
               <img 
                 src={service.image} 
                 alt={service.name} 
@@ -53,15 +52,19 @@ const ServicesList = () => {
                 {service.category}
               </div>
             </div>
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-bold text-slate-800 leading-snug">{service.name}</h3>
-                <span className="text-amber-600 font-bold text-lg">R$ {service.price}</span>
+                {service.price && (
+                  <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
+                    {service.price}
+                  </span>
+                )}
               </div>
-              <p className="text-slate-600 text-sm mb-6 line-clamp-2">
+              <p className="text-slate-600 text-sm mb-6 whitespace-pre-line flex-grow">
                 {service.description}
               </p>
-              <div className="flex items-center justify-between mt-auto">
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-slate-50">
                 <div className="flex items-center gap-1.5 text-slate-400 text-xs">
                   <Clock size={14} />
                   <span>{service.duration}</span>
