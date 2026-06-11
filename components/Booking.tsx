@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { SERVICES } from '../constants.tsx';
-import { CheckCircle, User, Phone, Send, MessageCircle } from 'lucide-react';
+import { CheckCircle, User, Phone, Send, MessageCircle, Sun, Sunset } from 'lucide-react';
 
 const Booking = () => {
   const [formData, setFormData] = useState({
     serviceId: '',
     name: '',
-    phone: ''
+    phone: '',
+    shift: ''
   });
 
   const selectedService = SERVICES.find(s => s.id === formData.serviceId);
@@ -14,13 +15,19 @@ const Booking = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!selectedService || !formData.name || !formData.phone) {
-      alert('Por favor, preencha todos os campos e selecione um serviço.');
+    if (!selectedService || !formData.name || !formData.phone || !formData.shift) {
+      alert('Por favor, preencha todos os campos, selecione um serviço e escolha o turno.');
       return;
     }
 
-    const message = `Olá! Gostaria de agendar um serviço no Paulo Goes Concept Hair.%0A%0A*Nome:* ${formData.name}%0A*Telefone:* ${formData.phone}%0A*Serviço:* ${selectedService.name}${selectedService.price ? `%0A*Valor:* ${selectedService.price}` : ''}`;
-    const whatsappUrl = `https://wa.me/5521991496983?text=${message}`;
+    const textMsg = `Olá! Gostaria de agendar um serviço no Paulo Goes Concept Hair.\n\n` +
+      `*Nome:* ${formData.name}\n` +
+      `*Telefone:* ${formData.phone}\n` +
+      `*Serviço:* ${selectedService.name}\n` +
+      (selectedService.price ? `*Valor:* ${selectedService.price}\n` : '') +
+      `*Turno de Preferência:* ${formData.shift}`;
+
+    const whatsappUrl = `https://wa.me/5521991496983?text=${encodeURIComponent(textMsg)}`;
     
     window.open(whatsappUrl, '_blank');
   };
@@ -113,11 +120,42 @@ const Booking = () => {
                 </div>
               </div>
 
+              {/* Shift Selection */}
+              <div className="relative">
+                <label className="block text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 ml-1">Turno de Atendimento</label>
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    type="button"
+                    onClick={() => setFormData({...formData, shift: 'Manhã'})}
+                    className={`flex items-center justify-center gap-3 py-4 px-6 rounded-2xl border-2 transition-all ${
+                      formData.shift === 'Manhã'
+                        ? 'border-amber-600 bg-amber-50 text-amber-800 font-bold shadow-sm'
+                        : 'border-slate-200 bg-white hover:border-amber-200 text-slate-600 font-medium'
+                    }`}
+                  >
+                    <Sun size={20} className={formData.shift === 'Manhã' ? 'text-amber-600' : 'text-slate-400'} />
+                    <span>Manhã</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setFormData({...formData, shift: 'Tarde'})}
+                    className={`flex items-center justify-center gap-3 py-4 px-6 rounded-2xl border-2 transition-all ${
+                      formData.shift === 'Tarde'
+                        ? 'border-amber-600 bg-amber-50 text-amber-800 font-bold shadow-sm'
+                        : 'border-slate-200 bg-white hover:border-amber-200 text-slate-600 font-medium'
+                    }`}
+                  >
+                    <Sunset size={20} className={formData.shift === 'Tarde' ? 'text-amber-600' : 'text-slate-400'} />
+                    <span>Tarde</span>
+                  </button>
+                </div>
+              </div>
+
               <div className="pt-6">
                 <button
                   type="submit"
                   className="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold hover:bg-slate-800 transition-all flex items-center justify-center gap-3 shadow-xl hover:shadow-slate-200 disabled:opacity-50 group"
-                  disabled={!formData.serviceId || !formData.name || !formData.phone}
+                  disabled={!formData.serviceId || !formData.name || !formData.phone || !formData.shift}
                 >
                   <MessageCircle size={22} className="group-hover:scale-110 transition-transform" />
                   Agendar via WhatsApp
@@ -136,6 +174,12 @@ const Booking = () => {
                   <span className="text-slate-700 font-medium">{selectedService.name}</span>
                   {selectedService.price && <span className="text-amber-600 font-bold text-sm">{selectedService.price}</span>}
                 </div>
+                {formData.shift && (
+                  <div className="flex justify-between items-center mt-3 pt-3 border-t border-amber-100">
+                    <span className="text-xs text-slate-500">Turno Escolhido</span>
+                    <span className="text-sm font-bold text-slate-700">{formData.shift}</span>
+                  </div>
+                )}
               </div>
             )}
           </div>
